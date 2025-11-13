@@ -1,40 +1,40 @@
 // Crear las listas de imágenes, títulos y frases
 const imagenes = [
-  "../assets/img/acto.jpeg",
-  "../assets/img/airelibre.jpeg",
-  "../assets/img/alcohol.jpeg",
-  "../assets/img/alcohol2.jpeg",
-  "../assets/img/ambiente.jpeg",
-  "../assets/img/baile.jpeg",
-  "../assets/img/baile2.jpeg",
-  "../assets/img/banda.jpeg",
-  "../assets/img/barra.jpeg",
-  "../assets/img/bartender.jpeg",
-  "../assets/img/catering.jpeg",
   "../assets/img/comida.jpeg",
-  "../assets/img/comida2.jpeg",
-  "../assets/img/confeti.jpeg",
-  "../assets/img/disco.jpeg",
-  "../assets/img/dj.jpeg",
-  "../assets/img/fuegosartificiales.jpeg",
   "../assets/img/gente.jpeg",
-  "../assets/img/globos.jpeg",
-  "../assets/img/juego.jpeg",
-  "../assets/img/karaoke.jpeg",
-  "../assets/img/luces.jpeg",
-  "../assets/img/mesero.jpeg",
-  "../assets/img/niños.jpeg",
-  "../assets/img/pastel.jpeg",
+  "../assets/img/baile.jpeg",
+    "../assets/img/regalos.jpeg",
+   "../assets/img/sorpresa.jpeg",
+    "../assets/img/baile2.jpeg",
+    "../assets/img/barra.jpeg",
+"../assets/img/banda.jpeg",
+"../assets/img/luces.jpeg",
+"../assets/img/confeti.jpeg",
+"../assets/img/pastel.jpeg",
+"../assets/img/juego.jpeg",
+ "../assets/img/karaoke.jpeg",
+"../assets/img/photo.jpeg",
+"../assets/img/globos.jpeg",
+"../assets/img/alcohol.jpeg",
+"../assets/img/mesero.jpeg",
+"../assets/img/pistadebaile.jpeg",
+"../assets/img/tacon.jpeg",
+"../assets/img/niños.jpeg",
+"../assets/img/bartender.jpeg",
+ "../assets/img/comida2.jpeg",
+"../assets/img/sinalcohol.jpeg",
+"../assets/img/acto.jpeg",
+"../assets/img/fuegosartificiales.jpeg",
+"../assets/img/sillas.jpeg",
+"../assets/img/catering.jpeg",
+"../assets/img/presentacion.jpeg",
+ "../assets/img/alcohol2.jpeg",
+"../assets/img/ambiente.jpeg",
+  "../assets/img/dj.jpeg",
+  "../assets/img/airelibre.jpeg",
   "../assets/img/personas.jpeg",
-  "../assets/img/photo.jpeg",
-  "../assets/img/pistadebaile.jpeg",
-  "../assets/img/presentacion.jpeg",
-  "../assets/img/regalos.jpeg",
-  "../assets/img/sillas.jpeg",
-  "../assets/img/sinalcohol.jpeg",
-  "../assets/img/sorpresa.jpeg",
-  "../assets/img/tacon.jpeg",
-  "../assets/img/tranquilo.jpeg"
+  "../assets/img/disco.jpeg",
+   "../assets/img/tranquilo.jpeg",
 ];
 
 const titulos = [
@@ -68,7 +68,6 @@ const titulos = [
 "En dos años.",
 "Dentro de cinco años.",
 "En el próximo fin de semana.",
-"El próximo trimestre.",
 "La próxima primavera.",
 "El próximo verano.",
 "El próximo invierno.",
@@ -101,14 +100,17 @@ const cosas = [
 "Habrá bebidas sin alcohol.",
 "Habrá un espectáculo sorpresa.",
 "Habrá fuegos artificiales.",
-"Habrá actuacionbuen es en viabrá asientos para todos.",
+"Habrá asientos para todos.",
 "Habrá servicio de catering.",
 "Habrá una alfombra roja.",
 "Habrá música para bailar.",
-"Habrá ambiente festivo.",
+"Habrá buen ambiente.",
 "Habrá risas",
 "Habrá un DJ.",
 "Habrá una fogata",
+"El ambiente será frenetico.",
+"Habrá una pista de baile iluminada.",
+"El ambiente será tranquilo.",
   
 ];
 const sentimientos = [
@@ -204,17 +206,21 @@ function numeroRandom(min, max) {
 function generarPrediccion() {
   // Para elegir la misma posición en todas las listas, generar un solo número aleatorio
   const indice = numeroRandom(0, cosas.length); // 0, 1, 2, 3
+  const indiceT = numeroRandom(0, titulos.length); 
+  const indiceS = numeroRandom(0, sentimientos.length);
+  const indiceA = numeroRandom(0, acontecimientos.length); 
 
   // Reemplaza el texto del elemento 'titulo' por un título de la lista de títulos elegido aleatoriamente
-  tiempo.innerText = titulos[indice]; // Entre los [] se pasa el número aleatorio generado arriba
+  
+  tiempo.innerText = titulos[indiceT]; // Entre los [] se pasa el número aleatorio generado arriba
 
   // Reemplaza la imagen del elemento 'imagen' por una elegida aleatoriamente
   imagen.src = imagenes[indice];
 
   // Reemplaza el texto del elemento 'predicción' por las frases elegidas aleatoriamente
   prediccion.innerHTML = `<p>${cosas[indice]}</p>`;
-  prediccion1.innerHTML = `<p>${sentimientos[indice]}</p>`;
-  prediccion2.innerHTML = `<p>${acontecimientos[indice]}</p>`;
+  prediccion1.innerHTML = `<p>${sentimientos[indiceS]}</p>`;
+  prediccion2.innerHTML = `<p>${acontecimientos[indiceA]}</p>`;
 }
 
 // Ejecuta la función generarPoema() cada vez que hago click en el botón
