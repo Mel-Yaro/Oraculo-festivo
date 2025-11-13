@@ -1,10 +1,43 @@
 // Crear las listas de imágenes, títulos y frases
 const imagenes = [
-  "../assets/img/alcohol.jpeg",
+  "../assets/img/acto.jpeg",
   "../assets/img/airelibre.jpeg",
+  "../assets/img/alcohol.jpeg",
+  "../assets/img/alcohol2.jpeg",
+  "../assets/img/ambiente.jpeg",
+  "../assets/img/baile.jpeg",
+  "../assets/img/baile2.jpeg",
+  "../assets/img/banda.jpeg",
+  "../assets/img/barra.jpeg",
+  "../assets/img/bartender.jpeg",
+  "../assets/img/catering.jpeg",
+  "../assets/img/comida.jpeg",
+  "../assets/img/comida2.jpeg",
+  "../assets/img/confeti.jpeg",
+  "../assets/img/disco.jpeg",
+  "../assets/img/dj.jpeg",
+  "../assets/img/fuegosartificiales.jpeg",
+  "../assets/img/gente.jpeg",
+  "../assets/img/globos.jpeg",
+  "../assets/img/juego.jpeg",
+  "../assets/img/karaoke.jpeg",
+  "../assets/img/luces.jpeg",
+  "../assets/img/mesero.jpeg",
+  "../assets/img/niños.jpeg",
+  "../assets/img/pastel.jpeg",
+  "../assets/img/personas.jpeg",
+  "../assets/img/photo.jpeg",
+  "../assets/img/pistadebaile.jpeg",
+  "../assets/img/presentacion.jpeg",
+  "../assets/img/regalos.jpeg",
+  "../assets/img/sillas.jpeg",
+  "../assets/img/sinalcohol.jpeg",
+  "../assets/img/sorpresa.jpeg",
+  "../assets/img/tacon.jpeg",
+  "../assets/img/tranquilo.jpeg"
 ];
 
-const cuando = [
+const titulos = [
   "El próximo año",
   "En un mes",
   "En una semana",
@@ -50,7 +83,6 @@ const cosas = [
   "Habrá sorpresas inesperadas.",
 "Habrá baile toda la noche.",
 "Habrá barra de bebidas.",
-"Habrá un DJ.",
 "Habrá una banda en vivo.",
 "Habrá luces de colores.",
 "Habrá confeti.",
@@ -69,14 +101,13 @@ const cosas = [
 "Habrá bebidas sin alcohol.",
 "Habrá un espectáculo sorpresa.",
 "Habrá fuegos artificiales.",
-"Habrá actuaciones en vivo.",
-"Habrá asientos para todos.",
+"Habrá actuacionbuen es en viabrá asientos para todos.",
 "Habrá servicio de catering.",
 "Habrá una alfombra roja.",
 "Habrá música para bailar.",
 "Habrá ambiente festivo.",
 "Habrá risas",
-"Habrá fotógrafos.",
+"Habrá un DJ.",
 "Habrá una fogata",
   
 ];
@@ -88,7 +119,7 @@ const sentimientos = [
   "Sentirás mucha gratitud.",
   "Sentiras mucha diversión.",
 "Sentirás nostalgia por recuerdos.",
-"Sentirás asombro.",
+"Sentirás sorpresa.",
 "Sentirás curiosidad.",
 "Sentirás adrenalina.",
 "Sentirás ternura.",
@@ -123,7 +154,33 @@ const acontecimientos = [
   "Recibirás una gran noticia.",
   "Tendrás una oportunidad única.",
   "Vivirás una experiencia inolvidable.",
-  "Descubrirás algo nuevo sobre ti mismo.",
+  "Descubrirás algo nuevo sobre",
+"te reencontrarás con alguien del pasado.",
+"Te pediran bailar",
+"Te dedicaran una canción.",
+"Recibirás un cumplido sincero.",
+"Te presenteran a una nueva amistad.",
+"Te ofrezran un trago.",
+"Te tomanrás una foto con alguien.",
+"Alguien recordará una anécdota compartida.",
+"Rematarás en un plan fuera de la fiesta.",
+"Te pedirán perdón por algo pasado.",
+"Te van a pedir un consejo o tu opinión.",
+"Alguien provocará una risa inesperada.",
+"Habrá quien te sorprenda con un pequeño regalo.",
+"Te dedicarán un brindis.",
+"Alguien preguntará por tu vida y se interesará de verdad.",
+"Habrá quien te haga sentir en confianza.",
+"Habrá quien te proponga colaborar en un proyecto.",
+"Habrá quien te ofrezca ayuda.",
+"Te besarán.",
+"Habrá quien te invite a subir al escenario o participar en un juego.",
+"Te dedicarán una canción",
+"Habrá quien te cuide si no te sientes bien.",
+"Habrá quien te presente a alguien especial.",
+"Te escribirán luego para agradecer la compañía.",
+"Alguien te acompañará hasta la salida.",
+"Al siguiente día tendrás que ir a trabajar.",
   "Serás el centro de atención.",
 "Harás un nuevo amigo.",
 "Recibirás un regalo inesperado.",
@@ -132,9 +189,8 @@ const acontecimientos = [
   
 
 // Trae los elementos del HTML que tienen ese id
-const body = document.body;
 const imagen = document.getElementById("foto");
-const tiempo = document.getElementById("fecha");
+const titulo = document.getElementById("titulo1");
 const prediccion = document.getElementById("objetos");
 const prediccion1 = document.getElementById("sentidos");
 const prediccion2 = document.getElementById("futuro");
@@ -150,11 +206,10 @@ function generarPrediccion() {
   const indice = numeroRandom(0, cosas.length); // 0, 1, 2, 3
 
   // Reemplaza el texto del elemento 'titulo' por un título de la lista de títulos elegido aleatoriamente
-  tiempo.innerText = cuando[indice]; // Entre los [] se pasa el número aleatorio generado arriba
+  titulo.innerText = titulos[indice]; // Entre los [] se pasa el número aleatorio generado arriba
 
   // Reemplaza la imagen del elemento 'imagen' por una elegida aleatoriamente
-  
-  body.style.backgroundImage = `url(${imagenes[numeroRandom(0, imagenes.length)]})`;
+ // imagen.src = imagenes[indice];
 
   // Reemplaza el texto del elemento 'predicción' por las frases elegidas aleatoriamente
   prediccion.innerHTML = `<p>${cosas[indice]}</p>`;
