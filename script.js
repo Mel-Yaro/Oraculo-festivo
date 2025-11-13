@@ -109,7 +109,7 @@ const cosas = [
 "Habrá un DJ.",
 "Habrá una fogata",
 "El ambiente será frenetico.",
-"Habrá una pista de baile iluminada.",
+
 "El ambiente será tranquilo.",
   
 ];
